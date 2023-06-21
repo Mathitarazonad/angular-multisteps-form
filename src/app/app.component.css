@@ -1,5 +1,16 @@
+.main {
+  width: 100%;
+}
+
 @media screen and (min-width: 768px) {
   .main {
+    background-color: white;
     padding: 1rem;
+    min-width: 700px;
+    margin: auto;
+    display: flex;
+    gap: 3rem;
+    border-radius: 10px;
+    min-height: 600px;
   }
 }

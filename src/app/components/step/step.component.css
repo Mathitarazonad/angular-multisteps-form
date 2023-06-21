@@ -7,9 +7,41 @@
   border-radius: 50%;
   font-weight: 600;
   color: var(--white);
-  min-width: 40px;
-  min-height: 40px;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media screen and (min-width: 768px) {
+  .step-information {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .step-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    text-transform: uppercase;
+  }
+
+  .step-number {
+    width: 35px;
+    height: 35px;
+  }
+
+  .step-container h3 {
+    font-size: 15px;
+    font-weight: normal;
+    color: var(--pastel-blue);
+  }
+
+  .step-container p {
+    color: var(--white);
+    font-weight: bold;
+    letter-spacing: 1.2px;
+    font-size: 15px;
+  }
 }
