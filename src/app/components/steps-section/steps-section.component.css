@@ -1,0 +1,15 @@
+.steps-section {
+  background: url('/assets/images/bg-sidebar-mobile.svg');
+  background-position: center;
+  background-size: cover;
+  min-height: 180px;
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+}
+
+.steps-list {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
