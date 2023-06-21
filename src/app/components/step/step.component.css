@@ -1,0 +1,15 @@
+.step-information {
+  display: none;
+}
+
+.step-number {
+  border: 1.5px solid var(--white);
+  border-radius: 50%;
+  font-weight: 600;
+  color: var(--white);
+  min-width: 40px;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
