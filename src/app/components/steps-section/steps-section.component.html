@@ -1,5 +1,5 @@
 <section class='steps-section'>
   <ul class='steps-list'>
-    <app-step  *ngFor='let step of steps' [stepNumber]='step.stepNumber' [stepDesc]='step.stepDesc'></app-step>
+    <app-step *ngFor='let step of steps' [stepNumber]='step.stepNumber' [stepDesc]='step.stepDesc' [currentStep]='currentStep'></app-step>
   </ul>
 </section>

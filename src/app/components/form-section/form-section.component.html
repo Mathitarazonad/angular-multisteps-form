@@ -16,7 +16,7 @@
         <input name='phone-number' id='number' placeholder="e.g.+1 234 567 890" />
       </div>
       <div class='btns-container'>
-        <button class='back-btn'>Go back</button>
+        <button class='back-btn' *ngIf='currentStep > 0'>Go back</button>
         <button class='next-btn'>Next Step</button>
       </div>
     </form>

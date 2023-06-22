@@ -9,6 +9,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class StepComponent implements OnInit {
   @Input() stepNumber: number = 0
   @Input() stepDesc: string = ''
+  @Input() currentStep!: number;
 
   constructor() {}
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { StepComponent } from '../step/step.component';
 import { CommonModule } from '@angular/common'
 
@@ -16,6 +16,8 @@ interface Step {
 })
 
 export class StepsSectionComponent implements OnInit {
+
+  @Input() currentStep!: number;
 
   steps: Step[] = [
     {stepNumber: 1, stepDesc: 'Your Info'},
