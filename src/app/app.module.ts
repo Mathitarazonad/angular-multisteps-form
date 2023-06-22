@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { StepsSectionComponent } from './components/steps-section/steps-section.component';
+import { FormSectionComponent } from './components/form-section/form-section.component';
 
 @NgModule({
   declarations: [
@@ -10,7 +11,8 @@ import { StepsSectionComponent } from './components/steps-section/steps-section.
   ],
   imports: [
     BrowserModule,
-    StepsSectionComponent
+    StepsSectionComponent,
+    FormSectionComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
