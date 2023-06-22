@@ -14,11 +14,13 @@
   justify-content: center;
 }
 
+.step-number.current {
+  background-color: var(--light-blue);
+  border: none;
+  color: var(--marine-blue);
+}
+
 @media screen and (min-width: 768px) {
-  .step-information {
-    display: flex;
-    flex-direction: column;
-  }
 
   .step-container {
     display: flex;
@@ -26,22 +28,25 @@
     align-items: center;
     text-transform: uppercase;
   }
-
+  
   .step-number {
     width: 35px;
     height: 35px;
   }
-
+  
   .step-container h3 {
     font-size: 15px;
     font-weight: normal;
     color: var(--pastel-blue);
   }
-
-  .step-container p {
+  
+  .step-information {
+    display: flex;
+    flex-direction: column;
     color: var(--white);
     font-weight: bold;
     letter-spacing: 1.2px;
     font-size: 15px;
   }
+
 }
