@@ -6,7 +6,6 @@
   .main {
     background-color: white;
     padding: 1rem;
-    min-width: 700px;
     margin: auto;
     display: flex;
     gap: 3rem;
