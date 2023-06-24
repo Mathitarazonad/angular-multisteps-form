@@ -10,4 +10,6 @@ import { CommonModule } from '@angular/common';
 })
 export class FormSectionComponent {
   @Input() currentStep!: number;
+  @Input() handleNextStep!: () => void;
+  @Input() handlePreviousStep!: () => void;
 }
