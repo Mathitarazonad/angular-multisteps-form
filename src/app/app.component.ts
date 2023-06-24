@@ -8,4 +8,12 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'multi-step-form';
   currentStep = 0;
+
+  handleNextStep = () => {
+    this.currentStep = this.currentStep + 1;
+  }
+
+  handlePreviousStep = () => {
+    this.currentStep = this.currentStep - 1;
+  }
 }
