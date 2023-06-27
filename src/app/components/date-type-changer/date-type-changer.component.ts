@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { DateType } from '../form-section/form-section.component';
 
 @Component({
   selector: 'app-date-type-changer',
@@ -9,6 +10,6 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./date-type-changer.component.css']
 })
 export class DateTypeChangerComponent {
-  @Input() dateType: string = 'monthly';
+  @Input() dateType!: DateType;
   @Input() handleDateTypeChange!: () => void;
 }
