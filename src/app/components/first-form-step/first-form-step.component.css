@@ -1,9 +1,8 @@
 fieldset {
-  visibility: hidden;
+  display: none;
 }
 
 fieldset.current {
-  visibility: visible;
   border: none;
   display: flex;
   flex-direction: column;
@@ -26,6 +25,9 @@ fieldset.current {
   border: 1.5px solid var(--light-gray);
   border-radius: 10px;
   padding: 15px;
+  color: var(--marine-blue);
+  font-weight: 500;
+  font-size: 18px;
 }
 
 .input-container input:hover {
@@ -34,7 +36,7 @@ fieldset.current {
 
 .input-container input:focus {
   outline: none;
-  border: 1px solid var(--marine-blue)
+  border: 1px solid var(--purplish-blue)
 }
 
 .input-container input::placeholder {
