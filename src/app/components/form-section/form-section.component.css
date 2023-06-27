@@ -42,6 +42,10 @@ form {
   justify-content: space-between;
 }
 
+.btns-container .next-btn:only-child {
+  margin-left: auto;
+}
+
 .back-btn {
   font-weight: 500;
   border: none;
