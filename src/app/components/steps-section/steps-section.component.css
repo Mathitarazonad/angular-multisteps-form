@@ -18,6 +18,7 @@
   .steps-section {
     background: url('/assets/images/bg-sidebar-desktop.svg');
     min-width: 275px;
+    background-size: cover;
     background-repeat: no-repeat;
     border-radius: 10px;
     padding: 40px;
