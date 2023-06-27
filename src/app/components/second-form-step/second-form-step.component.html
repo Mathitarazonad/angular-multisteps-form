@@ -1,0 +1,10 @@
+<fieldset [class.current]='currentStep === 1'>
+  <article *ngFor='let suscription of suscriptions' class='suscription-container'>
+    <img [src]='suscription.image' [alt]="suscription.name + 'icon'" />
+    <div class='suscription-information'>
+      <h3>{{suscription.name}}</h3>
+      <p>{{dateType === 'monthly' ? suscription.monthlyPrice : suscription.yearlyPrice}}</p>
+      <small *ngIf="dateType === 'yearly'">{{suscription.yearlyExtra}}</small>
+    </div>
+  </article>
+</fieldset>
