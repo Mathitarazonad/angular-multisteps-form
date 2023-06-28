@@ -26,7 +26,6 @@ interface Suscription {
 })
 
 export class SecondFormStepComponent {
-  @Input() currentStep!: number;
   @Input() dateType!: DateType;
   selectedSuscription = 0
 

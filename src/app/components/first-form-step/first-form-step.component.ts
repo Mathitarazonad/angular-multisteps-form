@@ -7,5 +7,4 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./first-form-step.component.css']
 })
 export class FirstFormStepComponent {
-  @Input() currentStep!: number;
 }
