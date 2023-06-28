@@ -8,6 +8,7 @@ type YearlyPriceType = `$${number}/yr`
 type YearlyExtraType = `${number} months free`
 
 interface Suscription {
+  id: number,
   image: string
   name: SuscriptionType
   monthlyPrice: MonthlyPriceType
@@ -27,9 +28,11 @@ interface Suscription {
 export class SecondFormStepComponent {
   @Input() currentStep!: number;
   @Input() dateType!: DateType;
+  selectedSuscription = 0
 
   suscriptions: Suscription[] = [
     {
+      id: 0,
       image: '/assets/images/icon-arcade.svg',
       name: 'Arcade',
       monthlyPrice: '$9/mo',
@@ -37,6 +40,7 @@ export class SecondFormStepComponent {
       yearlyExtra: '2 months free'
     },
     {
+      id: 1,
       image: '/assets/images/icon-advanced.svg',
       name: 'Advanced',
       monthlyPrice: '$12/mo',
@@ -44,6 +48,7 @@ export class SecondFormStepComponent {
       yearlyExtra: '2 months free'
     },
     {
+      id: 2,
       image: '/assets/images/icon-pro.svg',
       name: 'Pro',
       monthlyPrice: '$15/mo',
@@ -51,4 +56,8 @@ export class SecondFormStepComponent {
       yearlyExtra: '2 months free'
     }
   ]
+
+  handleSelectedSuscription = (id: number) => {
+    this.selectedSuscription = id;
+  }
 } 

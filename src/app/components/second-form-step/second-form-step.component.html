@@ -1,5 +1,5 @@
 <fieldset [class.current]='currentStep === 1'>
-  <article *ngFor='let suscription of suscriptions' class='suscription-container'>
+  <article *ngFor='let suscription of suscriptions' class='suscription-container' [class.selected-suscription]='selectedSuscription === suscription.id' (click)='handleSelectedSuscription(suscription.id)'>
     <img [src]='suscription.image' [alt]="suscription.name + 'icon'" />
     <div class='suscription-information'>
       <h3>{{suscription.name}}</h3>
