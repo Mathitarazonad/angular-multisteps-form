@@ -1,14 +1,14 @@
 <fieldset>
   <div class='input-container'>
     <label for='name'>Name</label>
-    <input name='name' id='name' placeholder="e.g. Stephen King" />
+    <input id='name' placeholder='e.g. Stephen King' [(ngModel)]='personalInfo.name' />
   </div>
   <div class='input-container'>
     <label for='email'>Email Address</label>
-    <input name='email' id='email' placeholder='e.g.stephenking@lorem.com' type='email' />
+    <input id='email' placeholder='e.g.stephenking@lorem.com' type='email' [(ngModel)]='personalInfo.email' />
   </div>
   <div class='input-container'>
     <label for='number'>Phone Number</label>
-    <input name='phone-number' id='number' placeholder="e.g.+1 234 567 890" />
+    <input id='number' placeholder='e.g.+1 234 567 890' [(ngModel)]='personalInfo.phoneNumber' />
   </div>
 </fieldset>
