@@ -29,6 +29,7 @@ interface Addon {
 
 export class ThirdFormStepComponent {
   @Input() dateType!: DateType;
+  @Input() currentStep!: number;
   addons: Addon[] = [
     {
       id: 0,
