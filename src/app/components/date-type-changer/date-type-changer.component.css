@@ -9,6 +9,7 @@
 }
 
 .date-changer-btn {
+  cursor: pointer;
   width: 40px;
   background-color: var(--marine-blue);
   border-radius: 25px;
