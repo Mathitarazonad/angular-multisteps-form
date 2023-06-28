@@ -2,15 +2,15 @@ import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DateType } from '../form-section/form-section.component';
 
-type SuscriptionType = 'Arcade' | 'Advanced' | 'Pro'
+type SubscriptionType = 'Arcade' | 'Advanced' | 'Pro'
 type MonthlyPriceType = `$${number}/mo`
 type YearlyPriceType = `$${number}/yr`
 type YearlyExtraType = `${number} months free`
 
-interface Suscription {
+export interface Subscription {
   id: number,
   image: string
-  name: SuscriptionType
+  name: SubscriptionType
   monthlyPrice: MonthlyPriceType
   yearlyPrice: YearlyPriceType
   yearlyExtra: YearlyExtraType
@@ -27,9 +27,9 @@ interface Suscription {
 
 export class SecondFormStepComponent {
   @Input() dateType!: DateType;
-  selectedSuscription = 0
+  selectedSubscription = 0
 
-  suscriptions: Suscription[] = [
+  subscriptions: Subscription[] = [
     {
       id: 0,
       image: '/assets/images/icon-arcade.svg',
@@ -56,7 +56,7 @@ export class SecondFormStepComponent {
     }
   ]
 
-  handleSelectedSuscription = (id: number) => {
-    this.selectedSuscription = id;
+  handleSelectedSubscription = (id: number) => {
+    this.selectedSubscription = id;
   }
 } 
