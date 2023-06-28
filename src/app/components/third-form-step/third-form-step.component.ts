@@ -9,7 +9,7 @@ type PriceToAddType = {
 
 type AddonType = 'Online Service' | 'Larger Storage' | 'Customizable Profile'
 
-interface Addon {
+export interface Addon {
   id: number,
   selected: boolean
   name: AddonType
