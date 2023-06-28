@@ -5,6 +5,7 @@
     <form>
       <app-first-form-step [currentStep]='currentStep' />
       <app-second-form-step [currentStep]='currentStep' [dateType]='dateType' />
+      <app-third-form-step [currentStep]='currentStep' [dateType]='dateType'/>
       <app-date-type-changer [handleDateTypeChange]='handleDateTypeChange' [dateType]='dateType' *ngIf='currentStep > 0 && currentStep < 3'/>
       <div class='btns-container'>
         <button type='button' class='back-btn' *ngIf='currentStep > 0' (click)='handlePreviousStep()'>Go back</button>
