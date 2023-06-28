@@ -20,9 +20,9 @@ fieldset.current {
   cursor: pointer;
 }
 
-.suscription-container:first-child { /* Later is selected instead of first-child */
+.suscription-container.selected-suscription { /* Later is selected instead of first-child */
   border: 1px solid var(--purplish-blue);
-  background-color: var(--alabaster);
+  background-color: var(--magnolia);
 }
 
 .suscription-container:hover {
