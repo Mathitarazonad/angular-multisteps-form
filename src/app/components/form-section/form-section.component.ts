@@ -13,6 +13,12 @@ export interface FormData {
   addons?: Addon[]
 }
 
+export interface InputErrors {
+  name: null | string
+  email: null | string
+  phoneNumber: null | string
+}
+
 @Component({
   selector: 'app-form-section',
   standalone: true,
@@ -31,6 +37,11 @@ export class FormSectionComponent {
     subscription: undefined,
     addons: []
   };
+  inputErrors: InputErrors = {
+    name: null,
+    email: null,
+    phoneNumber: null,
+  }
 
   handleDateTypeChange = () => {
     this.dateType = this.dateType === 'monthly' ? 'yearly' : 'monthly';
@@ -40,4 +51,59 @@ export class FormSectionComponent {
     const updatedFormData = {...this.formData, [field]: values};
     this.formData = updatedFormData;
   }
+
+  checkInputs = () => {
+    let isAnyError = false;
+    if (this.formData.personalInfo !== undefined) {
+      const {name, email, phoneNumber} = this.formData.personalInfo;
+      if (!name) {
+        this.updateInputErrors('name', 'This field is required');
+        isAnyError = true;
+      }
+      if (!email) {
+        this.updateInputErrors('email', 'This field is required');
+        isAnyError = true;
+      }
+      if (!phoneNumber) {
+        this.updateInputErrors('phoneNumber', 'This field is required');
+        isAnyError = true;
+      }
+
+      if (name.length < 5 && name) {
+        this.updateInputErrors('name', 'Name is too short');
+        isAnyError = true;
+      }
+      if (phoneNumber.length < 10  && phoneNumber !== '') {
+        this.updateInputErrors('phoneNumber', 'Phone number is not valid');
+        isAnyError = true;
+      }
+
+      const emailRegex = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;
+      if (!emailRegex.test(email) && email) {
+        this.updateInputErrors('email', 'Email is not valid');
+        isAnyError = true;
+      }
+    } else {
+      this.updateInputErrors('name', 'This field is required');
+      this.updateInputErrors('email', 'This field is required');
+      this.updateInputErrors('phoneNumber', 'This field is required');
+      return
+    }
+
+    if (!isAnyError) {
+      this.handleNextStep()
+    }
+  }
+
+  updateInputErrors = <K extends keyof InputErrors>(field: K, error: InputErrors[K]) => {
+    const updatedInputErrors = {...this.inputErrors, [field]: error};
+    this.inputErrors = updatedInputErrors;
+  }
+
+  resetInputErrors = () => {
+    let resetedInputErrors = {...this.inputErrors}
+    resetedInputErrors = {name: null, email: null, phoneNumber: null}
+    this.inputErrors = resetedInputErrors;
+  }
+
 }
