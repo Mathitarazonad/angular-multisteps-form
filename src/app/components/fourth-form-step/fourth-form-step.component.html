@@ -2,19 +2,15 @@
   <div class='summary-information'>
     <div class='selected-subscription'>
       <div class='subscription-information'>
-        <h3>Arcade (Monthly)</h3>
-        <p>Change</p>
+        <h3>{{formData.subscription?.name}} ({{dateType === 'monthly' ? 'Monthly' : 'Yearly'}})</h3>
+        <p (click)='backToSubscriptionStep()'>Change</p>
       </div>
       <p class='subscription-price'>$9/mo</p>
     </div>
     <div class='selected-addons'>
-      <div class='addon'>
-        <p>Online Service</p>
-        <h4>+$1/mo</h4>
-      </div>
-      <div class='addon'>
-        <p>larger Storage</p>
-        <h4>+$2/mo</h4>
+      <div class='addon' *ngFor='let addon of formData.addons'>
+        <p>{{addon.name}}</p>
+        <h4>{{dateType === 'monthly' ? addon.monthlyAdditionalPrice : addon.yearlyAdditionalPrice}}</h4>
       </div>
     </div>
   </div>
