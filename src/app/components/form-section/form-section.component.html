@@ -4,7 +4,7 @@
     <form>
       <app-first-form-step *ngIf='currentStep === 0' [updateFormData]='updateFormData' [resetInputErrors]='resetInputErrors' [inputErrors]='inputErrors' />
       <app-second-form-step [dateType]='dateType' [updateFormData]='updateFormData' *ngIf='currentStep === 1' />
-      <app-third-form-step [dateType]='dateType' *ngIf='currentStep === 2' />
+      <app-third-form-step [dateType]='dateType' [updateFormData]='updateFormData' *ngIf='currentStep === 2' />
       <app-fourth-form-step [dateType]='dateType' *ngIf='currentStep === 3' />
       <app-date-type-changer [handleDateTypeChange]='handleDateTypeChange' [dateType]='dateType' *ngIf='currentStep > 0'/>
       <div class='btns-container'>

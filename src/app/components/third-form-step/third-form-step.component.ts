@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DateType } from '../form-section/form-section.component';
+import { DateType, FormData } from '../form-section/form-section.component';
 
 type PriceToAddType = {
   monthly: number,
@@ -29,6 +29,7 @@ export interface Addon {
 
 export class ThirdFormStepComponent {
   @Input() dateType!: DateType;
+  @Input() updateFormData!: <K extends keyof FormData>(field: K, values: FormData[K]) => void
   addons: Addon[] = [
     {
       id: 0,
@@ -74,5 +75,6 @@ export class ThirdFormStepComponent {
       return {...addon}
     });
     this.addons = updatedAddons;
+    this.updateFormData('addons', updatedAddons.filter(addon => addon.selected));
   }
 }
