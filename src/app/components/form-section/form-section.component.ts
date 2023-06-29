@@ -19,6 +19,11 @@ export interface InputErrors {
   phoneNumber: null | string
 }
 
+export interface FormStepInformation {
+  title: string
+  description: string
+}
+
 @Component({
   selector: 'app-form-section',
   standalone: true,
@@ -41,7 +46,25 @@ export class FormSectionComponent {
     name: null,
     email: null,
     phoneNumber: null,
-  }
+  };
+  formStepsInformation: FormStepInformation[] = [
+    {
+      title: 'Personal Info',
+      description: 'Please provide your name, email, address and phone number.'
+    },
+    {
+      title: 'Select your plan',
+      description: 'You have the option of monthly or yearly billing.'
+    },
+    {
+      title: 'Pick add-ons',
+      description: 'Add-ons help enhance your gaming experience'
+    },
+    {
+      title: 'Finishing up',
+      description: 'Double-check everything looks OK before confirming.'
+    },
+  ]
 
   handleDateTypeChange = () => {
     this.dateType = this.dateType === 'monthly' ? 'yearly' : 'monthly';
