@@ -10,7 +10,7 @@
       <app-date-type-changer [handleDateTypeChange]='handleDateTypeChange' [dateType]='dateType' *ngIf='currentStep > 0'/>
       <div class='btns-container'>
         <button type='button' class='back-btn' *ngIf='currentStep > 0' (click)='handlePreviousStep()'>Go back</button>
-        <button type='button' class='next-btn' *ngIf='currentStep < 3' (click)='handleNextStep()'>Next Step</button>
+        <button type='button' class='next-btn' *ngIf='currentStep < 3' (click)='checkInputs()'>Next Step</button>
       </div>
     </form>
   </div>
