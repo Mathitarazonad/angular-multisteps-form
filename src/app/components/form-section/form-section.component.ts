@@ -5,6 +5,7 @@ import { SecondFormStepComponent, Subscription } from '../second-form-step/secon
 import { DateTypeChangerComponent } from '../date-type-changer/date-type-changer.component';
 import { Addon, ThirdFormStepComponent } from '../third-form-step/third-form-step.component';
 import { FourthFormStepComponent } from '../fourth-form-step/fourth-form-step.component';
+import { FormStepInformationComponent } from '../form-step-information/form-step-information.component';
 
 export type DateType = 'monthly' | 'yearly'
 export interface FormData {
@@ -27,7 +28,7 @@ export interface FormStepInformation {
 @Component({
   selector: 'app-form-section',
   standalone: true,
-  imports: [CommonModule, FirstFormStepComponent, SecondFormStepComponent, ThirdFormStepComponent, FourthFormStepComponent, DateTypeChangerComponent],
+  imports: [CommonModule, FirstFormStepComponent, SecondFormStepComponent, ThirdFormStepComponent, FourthFormStepComponent, DateTypeChangerComponent, FormStepInformationComponent],
   templateUrl: './form-section.component.html',
   styleUrls: ['./form-section.component.css']
 })

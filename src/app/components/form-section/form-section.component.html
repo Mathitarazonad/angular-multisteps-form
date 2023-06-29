@@ -1,7 +1,6 @@
 <section class='form-section'>
   <div class='form-section-container'>
-    <h2>Personal Info</h2>
-    <p>Please provide your name, email, address, and phone number</p>
+    <app-form-step-information [formStepInformation]='formStepsInformation[currentStep]' />
     <form>
       <app-first-form-step *ngIf='currentStep === 0' [updateFormData]='updateFormData' [resetInputErrors]='resetInputErrors' [inputErrors]='inputErrors' />
       <app-second-form-step [dateType]='dateType' *ngIf='currentStep === 1' />
