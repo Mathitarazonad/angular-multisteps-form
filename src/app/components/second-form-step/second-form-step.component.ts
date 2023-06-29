@@ -1,6 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DateType } from '../form-section/form-section.component';
+import { DateType, FormData } from '../form-section/form-section.component';
 
 type SubscriptionType = 'Arcade' | 'Advanced' | 'Pro'
 type MonthlyPriceType = `$${number}/mo`
@@ -25,9 +25,10 @@ export interface Subscription {
   styleUrls: ['./second-form-step.component.css']
 })
 
-export class SecondFormStepComponent {
+export class SecondFormStepComponent implements OnInit {
   @Input() dateType!: DateType;
-  selectedSubscription = 0
+  @Input() updateFormData!: <K extends keyof FormData>(field: K, values: FormData[K]) => void
+  selectedSubscription = 0;
 
   subscriptions: Subscription[] = [
     {
@@ -54,9 +55,20 @@ export class SecondFormStepComponent {
       yearlyPrice: '$150/yr',
       yearlyExtra: '2 months free'
     }
-  ]
+  ];
+
+  getSelectedSubscription = () => {
+    return this.subscriptions.find(sub => sub.id === this.selectedSubscription);
+  }
 
   handleSelectedSubscription = (id: number) => {
     this.selectedSubscription = id;
+    const selectedSuscriptionObj = this.getSelectedSubscription();
+    this.updateFormData('subscription', selectedSuscriptionObj);
+  }
+
+  ngOnInit() {
+    const selectedSuscriptionObj = this.getSelectedSubscription();
+    this.updateFormData('subscription', selectedSuscriptionObj);
   }
 } 
