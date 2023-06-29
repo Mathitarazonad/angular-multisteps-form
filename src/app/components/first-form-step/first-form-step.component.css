@@ -9,6 +9,7 @@ fieldset {
   display: flex;
   flex-direction: column;
   gap: 5px;
+  position: relative;
 }
 
 .input-container label {
@@ -39,4 +40,13 @@ fieldset {
   font-weight: 500;
   font-size: 16px;
   color: var(--cool-gray);
+}
+
+.input-error {
+  color: var(--strawberry-red);
+  font-weight: 600;
+  font-size: 14px;
+  position: absolute;
+  top: 1px;
+  right: 3px;
 }
