@@ -5,7 +5,7 @@
       <app-first-form-step *ngIf='currentStep === 0' [updateFormData]='updateFormData' [resetInputErrors]='resetInputErrors' [inputErrors]='inputErrors' />
       <app-second-form-step [dateType]='dateType' [updateFormData]='updateFormData' *ngIf='currentStep === 1' />
       <app-third-form-step [dateType]='dateType' [updateFormData]='updateFormData' *ngIf='currentStep === 2' />
-      <app-fourth-form-step [dateType]='dateType' *ngIf='currentStep === 3' />
+      <app-fourth-form-step [dateType]='dateType' [formData]='formData' [updateFormData]='updateFormData' [backToSubscriptionStep]='backToSubscriptionStep' *ngIf='currentStep === 3' />
       <app-date-type-changer [handleDateTypeChange]='handleDateTypeChange' [dateType]='dateType' *ngIf='currentStep > 0'/>
       <div class='btns-container'>
         <button type='button' class='back-btn' *ngIf='currentStep > 0' (click)='handlePreviousStep()'>Go back</button>

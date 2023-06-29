@@ -37,6 +37,7 @@ export class FormSectionComponent {
   @Input() currentStep!: number;
   @Input() handleNextStep!: () => void;
   @Input() handlePreviousStep!: () => void;
+  @Input() backToSubscriptionStep!: () => void;
   dateType: DateType = 'monthly';
   formData: FormData = {
     personalInfo: undefined,
