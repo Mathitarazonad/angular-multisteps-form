@@ -14,6 +14,10 @@ export interface Subscription {
   monthlyPrice: MonthlyPriceType
   yearlyPrice: YearlyPriceType
   yearlyExtra: YearlyExtraType
+  priceToAdd: {
+    monthly: number
+    yearly: number
+  }
 }
 
 
@@ -38,7 +42,11 @@ export class SecondFormStepComponent implements OnInit {
       name: 'Arcade',
       monthlyPrice: '$9/mo',
       yearlyPrice: '$90/yr',
-      yearlyExtra: '2 months free'
+      yearlyExtra: '2 months free',
+      priceToAdd: {
+        monthly: 9,
+        yearly: 90
+      }
     },
     {
       id: 1,
@@ -46,7 +54,11 @@ export class SecondFormStepComponent implements OnInit {
       name: 'Advanced',
       monthlyPrice: '$12/mo',
       yearlyPrice: '$120/yr',
-      yearlyExtra: '2 months free'
+      yearlyExtra: '2 months free',
+      priceToAdd: {
+        monthly: 12,
+        yearly: 120
+      }
     },
     {
       id: 2,
@@ -54,7 +66,11 @@ export class SecondFormStepComponent implements OnInit {
       name: 'Pro',
       monthlyPrice: '$15/mo',
       yearlyPrice: '$150/yr',
-      yearlyExtra: '2 months free'
+      yearlyExtra: '2 months free',
+      priceToAdd: {
+        monthly: 15,
+        yearly: 150
+      }
     }
   ];
 
