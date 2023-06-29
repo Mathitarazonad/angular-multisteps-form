@@ -16,4 +16,8 @@ export class AppComponent {
   handlePreviousStep = () => {
     this.currentStep = this.currentStep - 1;
   }
+
+  backToSubscriptionStep = () => {
+    this.currentStep = 1;
+  }
 }
