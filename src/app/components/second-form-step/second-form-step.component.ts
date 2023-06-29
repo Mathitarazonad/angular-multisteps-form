@@ -27,6 +27,7 @@ export interface Subscription {
 
 export class SecondFormStepComponent implements OnInit {
   @Input() dateType!: DateType;
+  @Input() formData!: FormData;
   @Input() updateFormData!: <K extends keyof FormData>(field: K, values: FormData[K]) => void
   selectedSubscription = 0;
 
@@ -68,6 +69,12 @@ export class SecondFormStepComponent implements OnInit {
   }
 
   ngOnInit() {
+    if (this.formData.subscription !== undefined) {
+      const formSelectedSubscriptionId = this.formData.subscription.id;
+      this.selectedSubscription = formSelectedSubscriptionId;
+      return
+    }
+
     const selectedSuscriptionObj = this.getSelectedSubscription();
     this.updateFormData('subscription', selectedSuscriptionObj);
   }

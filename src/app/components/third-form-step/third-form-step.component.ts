@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DateType, FormData } from '../form-section/form-section.component';
 
@@ -27,8 +27,9 @@ export interface Addon {
   styleUrls: ['./third-form-step.component.css']
 })
 
-export class ThirdFormStepComponent {
+export class ThirdFormStepComponent implements OnInit {
   @Input() dateType!: DateType;
+  @Input() formData!: FormData;
   @Input() updateFormData!: <K extends keyof FormData>(field: K, values: FormData[K]) => void
   addons: Addon[] = [
     {
@@ -76,5 +77,14 @@ export class ThirdFormStepComponent {
     });
     this.addons = updatedAddons;
     this.updateFormData('addons', updatedAddons.filter(addon => addon.selected));
+  }
+
+  ngOnInit() {
+    if (this.formData.addons !== undefined && this.formData.addons.length > 0) {
+      const selectedAddonsIds = this.formData.addons.filter(addon => addon.selected).map(addon => addon.id);
+      const unselectedAddons = this.addons.filter(addon => !selectedAddonsIds.includes(addon.id));
+      const sortedAddons = [...this.formData.addons, ...unselectedAddons].sort((a, b) => a.id - b.id)
+      this.addons = sortedAddons;
+    }
   }
 }
