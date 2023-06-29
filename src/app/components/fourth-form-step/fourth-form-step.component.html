@@ -2,20 +2,20 @@
   <div class='summary-information'>
     <div class='selected-subscription'>
       <div class='subscription-information'>
-        <h3>{{formData.subscription?.name}} ({{dateType === 'monthly' ? 'Monthly' : 'Yearly'}})</h3>
+        <h3>{{formData.subscription?.name}} ({{isMonthly() ? 'Monthly' : 'Yearly'}})</h3>
         <p (click)='backToSubscriptionStep()'>Change</p>
       </div>
-      <p class='subscription-price'>$9/mo</p>
+      <p class='subscription-price'>{{isMonthly() ? formData.subscription?.monthlyPrice : formData.subscription?.yearlyPrice}}</p>
     </div>
     <div class='selected-addons'>
       <div class='addon' *ngFor='let addon of formData.addons'>
         <p>{{addon.name}}</p>
-        <h4>{{dateType === 'monthly' ? addon.monthlyAdditionalPrice : addon.yearlyAdditionalPrice}}</h4>
+        <h4>{{isMonthly() ? addon.monthlyAdditionalPrice : addon.yearlyAdditionalPrice}}</h4>
       </div>
     </div>
   </div>
   <div class='summary-total'>
-    <p>Total (per month)</p>
-    <h4>+$12/mo</h4>
+    <p>Total ({{isMonthly() ? 'per month' : 'per year'}})</p>
+    <h4>+${{getTotalPrice()}}/{{isMonthly() ? 'mo' : 'yr'}}</h4>
   </div>
 </div>

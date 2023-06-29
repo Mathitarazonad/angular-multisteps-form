@@ -15,4 +15,21 @@ export class FourthFormStepComponent {
   @Input() formData!: FormData;
   @Input() updateFormData!: <K extends keyof FormData>(field: K, values: FormData[K]) => void;
   @Input() backToSubscriptionStep!: () => void;
+
+  isMonthly = (): boolean => {
+    return this.dateType === 'monthly';
+  }
+
+  getTotalPrice = () => {
+    const { subscription, addons } = this.formData;
+    if (this.dateType === 'monthly') {
+      const subscriptionPrice = subscription?.priceToAdd.monthly;
+      const addonsPrice = addons?.reduce((acc, curr) => acc + curr.priceToAdd.monthly, 0) ?? 0;
+      return subscriptionPrice! + addonsPrice;
+    }
+
+    const subscriptionPrice = subscription?.priceToAdd.yearly;
+      const addonsPrice = addons?.reduce((acc, curr) => acc + curr.priceToAdd.yearly, 0) ?? 0;
+      return subscriptionPrice! + addonsPrice;
+  }
 }
