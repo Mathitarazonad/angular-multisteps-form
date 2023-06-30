@@ -63,6 +63,23 @@
   font-weight: 500;
 }
 
+.addon-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.addon-right svg {
+  margin-top: 1px;
+  cursor: pointer;
+  fill: var(--marine-blue);
+  transition: fill .2s;
+}
+
+.addon-right svg:hover {
+  fill: var(--strawberry-red);
+}
+
 .summary-total {
   padding: 0 15px;
   display: flex;
