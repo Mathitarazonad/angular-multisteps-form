@@ -46,7 +46,7 @@ export class FirstFormStepComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.formData.personalInfo !== undefined) {
-      this.personalInfo = this.formData.personalInfo;
+      this.personalInfo = {...this.formData.personalInfo};
     }
   }
 }
