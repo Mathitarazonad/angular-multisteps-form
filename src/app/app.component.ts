@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'multi-step-form';
   currentStep = 0;
+  formCompleted = true;
 
   handleNextStep = () => {
     this.currentStep = this.currentStep + 1;
@@ -19,5 +20,9 @@ export class AppComponent {
 
   backToSubscriptionStep = () => {
     this.currentStep = 1;
+  }
+
+  completeForm = () => {
+    this.formCompleted = true;
   }
 }
