@@ -32,4 +32,9 @@ export class FourthFormStepComponent {
       const addonsPrice = addons?.reduce((acc, curr) => acc + curr.priceToAdd.yearly, 0) ?? 0;
       return subscriptionPrice! + addonsPrice;
   }
+  
+  removeAddon = (id: number) => {
+    const updatedAddons = this.formData.addons!.filter(addon => addon.id !== id);
+    this.updateFormData('addons', updatedAddons);
+  }
 }
