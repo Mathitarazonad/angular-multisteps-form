@@ -38,6 +38,8 @@ export class FormSectionComponent {
   @Input() handleNextStep!: () => void;
   @Input() handlePreviousStep!: () => void;
   @Input() backToSubscriptionStep!: () => void;
+  @Input() completeForm!: () => void;
+
   dateType: DateType = 'monthly';
   formData: FormData = {
     personalInfo: undefined,
@@ -66,7 +68,7 @@ export class FormSectionComponent {
       title: 'Finishing up',
       description: 'Double-check everything looks OK before confirming.'
     },
-  ]
+  ];
 
   handleDateTypeChange = () => {
     this.dateType = this.dateType === 'monthly' ? 'yearly' : 'monthly';
@@ -131,4 +133,8 @@ export class FormSectionComponent {
     this.inputErrors = resetedInputErrors;
   }
 
+  handleSubmit = (e: SubmitEvent) => {
+    e.preventDefault()
+    this.completeForm();
+  }
 }

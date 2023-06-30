@@ -44,7 +44,7 @@ form {
   cursor: pointer;
 }
 
-.next-btn{
+.next-btn {
   font-weight: 500;
   border: none;
   background: none;
@@ -52,6 +52,19 @@ form {
   letter-spacing: 1px;
   padding: 12px;
   background: var(--marine-blue);
+  border-radius: 10px;
+  color: var(--white);
+  cursor: pointer;
+}
+
+.confirm-btn {
+  font-weight: 500;
+  border: none;
+  background: none;
+  font-size: 15px;
+  letter-spacing: 1px;
+  padding: 12px;
+  background: var(--purplish-blue);
   border-radius: 10px;
   color: var(--white);
   cursor: pointer;
@@ -77,7 +90,7 @@ form {
     color: var(--marine-blue);
   }
 
-  .next-btn {
+  .next-btn, .confirm-btn {
     width: 120px;
     padding: 15px;
     transition: background-color .2s;
@@ -85,6 +98,10 @@ form {
 
   .next-btn:hover {
     background-color: var(--purplish-blue);
+  }
+
+  .confirm-btn:hover {
+    background-color: var(--pastel-blue);
   }
 
 }
