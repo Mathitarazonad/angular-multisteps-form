@@ -25,4 +25,9 @@ export class AppComponent {
   completeForm = () => {
     this.formCompleted = true;
   }
+
+  restartForm = () => {
+    this.formCompleted = false;
+    this.currentStep = 0;
+  }
 }
