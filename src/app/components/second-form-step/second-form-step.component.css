@@ -16,7 +16,7 @@ fieldset{
   cursor: pointer;
 }
 
-.subscription-container.selected-subscription { /* Later is selected instead of first-child */
+.subscription-container.selected-subscription {
   border: 1px solid var(--purplish-blue);
   background-color: var(--magnolia);
 }
